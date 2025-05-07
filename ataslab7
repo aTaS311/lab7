@@ -1,0 +1,16 @@
+with open("massiv.txt", "w") as file:
+    file.write("12 5 8 7 4 9 10 15 6")
+with open("massiv.txt", "r") as file:
+    data = list(map(int, file.read().split()))
+cut_ededler = []
+for eded in data:
+    if eded % 2 == 0:
+        cut_ededler.append(eded * 2)
+with open("cut_ededler.txt", "w") as new_file:
+    for eded in cut_ededler:
+        new_file.write(str(eded) + " ")
+if cut_ededler:
+    ededi_orta = sum(cut_ededler) / len(cut_ededler)
+    print(f"Cüt ədədlərin 2 dəfə artırılmış halının ədədi ortası: {ededi_orta:.2f}")
+else:
+    print("Cüt ədəd tapılmadı.")
